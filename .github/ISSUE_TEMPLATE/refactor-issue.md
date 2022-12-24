@@ -1,8 +1,8 @@
 ---
-name: Feature issue
-about: add something
-title: ''
-labels: Featuring
+name: Refactor issue
+about: improve something
+title:
+labels: Refactoring
 assignees: ParkJong-Hun
 
 ---
@@ -10,8 +10,10 @@ assignees: ParkJong-Hun
 ## Summary
 description
 
+<!-- optional
 ### Todo
 - [ ] todo1
+-->
 
 ### Goal
 goal
