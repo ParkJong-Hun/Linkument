@@ -13,4 +13,4 @@ jobs:
       - uses: actions/add-to-project@v0.4.0
         with:
           project-url: https://github.com/users/ParkJong-Hun/projects/2
-          github-token: ${{ secrets.LinkumentAdmin }}
+          github-token: ${{ secrets.LINKUMENTADMIN }}
