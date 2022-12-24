@@ -40,6 +40,5 @@ object Dependencies {
     object Retrofit {
         const val RETROFIT = "com.squareup.retrofit2:retrofit:${Versions.Retrofit.RETROFIT}"
         const val GSON = "com.squareup.retrofit2:converter-gson:${Versions.Retrofit.RETROFIT}"
-        // TODO add 'Kotlin Serialization' for KMM
     }
 }

@@ -20,7 +20,8 @@ fun DependencyHandler.composeDependencies() {
     implementation(Dependencies.Compose.MATERIAL_ICONS_CORE)
     implementation(Dependencies.Compose.MATERIAL_ICONS_EXTENDED)
     implementation(Dependencies.Compose.RUNTIME_LIVEDATA)
-    implementation(Dependencies.Compose.CONSTRAINT_LAYOUT)
+    // make sure I need it
+    // implementation(Dependencies.Compose.CONSTRAINT_LAYOUT)
     implementation(Dependencies.Compose.NAVIGATION)
 }
 
