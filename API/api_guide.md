@@ -33,3 +33,8 @@ Show Databases
 Use a database
 
 - `use {DB_name};`
+
+##### fix the timezone error
+
+- `set gloval time_zone='{Your time zone}'`
+    - ex) `set gloval time_zone='Asia/Tokyo'`
