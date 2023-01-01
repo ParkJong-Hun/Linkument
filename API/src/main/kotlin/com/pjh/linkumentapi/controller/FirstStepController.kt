@@ -1,4 +1,11 @@
 package com.pjh.linkumentapi.controller
 
-class FirstStepController {
+import com.pjh.linkumentapi.service.UserService
+import org.springframework.web.bind.annotation.RestController
+
+@RestController
+class FirstStepController(
+    val userService: UserService
+) {
+    // TODO
 }

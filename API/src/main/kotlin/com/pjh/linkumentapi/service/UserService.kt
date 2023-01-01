@@ -1,4 +1,11 @@
 package com.pjh.linkumentapi.service
 
-class UserService {
+import com.pjh.linkumentapi.repository.UserRepository
+import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
+
+@Service
+@Transactional
+class UserService(val repository: UserRepository) {
+    // TODO
 }

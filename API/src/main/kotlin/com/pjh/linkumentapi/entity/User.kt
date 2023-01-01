@@ -1,4 +1,12 @@
 package com.pjh.linkumentapi.entity
 
-class User {
-}
+import jakarta.persistence.Entity
+import java.time.LocalDateTime
+
+// FIXME
+@Entity
+data class User(
+    val id: String,
+    val nickname: String,
+    val createTime: LocalDateTime,
+)
