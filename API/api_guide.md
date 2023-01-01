@@ -22,9 +22,13 @@ External specific DataBase
 
 #### use specific DB on terminal
 
+Create Database
+
+- `create database {DB_name};`
+
 Show Databases
 
-- `show database;`
+- `show databases;`
 
 Use a database
 
