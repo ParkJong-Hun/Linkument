@@ -3,10 +3,10 @@ package com.pjh.linkumentapi.entity
 import jakarta.persistence.Entity
 import java.time.LocalDateTime
 
-// FIXME
 @Entity
 data class User(
-    val id: String,
+    val id: Long?,
     val nickname: String,
-    val createTime: LocalDateTime,
+    val createTime: LocalDateTime = LocalDateTime.now(),
+    val updateTime: LocalDateTime = LocalDateTime.now()
 )

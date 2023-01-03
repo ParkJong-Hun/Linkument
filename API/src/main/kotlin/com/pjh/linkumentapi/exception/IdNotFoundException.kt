@@ -3,6 +3,6 @@ package com.pjh.linkumentapi.exception
 import java.time.LocalDateTime
 
 interface IdNotFoundException {
-    val requestId: Long
+    val targetId: Long
     val happenedTime: LocalDateTime
 }
