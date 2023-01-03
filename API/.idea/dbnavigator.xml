@@ -45,7 +45,7 @@
     <retain-sticky-names value="false" />
   </component>
   <component name="DBNavigator.Project.FileConnectionMappingManager">
-    <mapping file-url="file://$PROJECT_DIR$/src/main/resources/scheme.sql" connection-id="759b4bf0-410d-42d0-95bb-16d292eb9dc0" session-id="MAIN" current-schema="" />
+    <mapping file-url="file://$PROJECT_DIR$/src/main/resources/scheme.sql" connection-id="759b4bf0-410d-42d0-95bb-16d292eb9dc0" session-id="MAIN" current-schema="linkument" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />
@@ -72,18 +72,18 @@
     <connections>
       <connection id="759b4bf0-410d-42d0-95bb-16d292eb9dc0" active="true" signed="false">
         <database>
-          <name value="Connection" />
+          <name value="LinkumentConnection" />
           <description value="" />
           <database-type value="MYSQL" />
           <config-type value="BASIC" />
-          <database-version value="9999.0" />
+          <database-version value="8.0" />
           <driver-source value="BUILTIN" />
           <driver-library value="" />
           <driver value="" />
           <url-type value="DATABASE" />
           <host value="localhost" />
           <port value="3306" />
-          <database value="mysql" />
+          <database value="linkument" />
           <type value="USER_PASSWORD" />
           <user value="root" />
           <deprecated-pwd value="MTIzNA==" />
