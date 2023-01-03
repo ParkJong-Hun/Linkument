@@ -1,5 +1,6 @@
-package com.pjh.linkumentapi.exception
+package com.pjh.linkumentapi.exception.user
 
+import com.pjh.linkumentapi.exception.IdNotFoundException
 import java.time.LocalDateTime
 
 data class UserIdNotFoundException(

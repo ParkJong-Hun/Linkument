@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface UserRepository : JpaRepository<User, Long> {
-    // TODO
+    fun findByIdEquals(id: Long): User?
+    fun findByNicknameEquals(nickname: String): User?
 }
