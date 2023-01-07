@@ -22,6 +22,10 @@ object Versions {
         const val NAVIGATION = "2.5.3"
     }
 
+    object Material {
+        const val MATERIAL3 = "1.1.0-alpha03"
+    }
+
     object DI {
         const val HILT = "2.38.1"
     }
