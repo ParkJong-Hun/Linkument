@@ -6,7 +6,7 @@ object Versions {
     const val VERSION_NAME = "1.0"
 
     const val ANDROID = "7.1.2"
-    const val KOTLIN = "1.5.21"
+    const val KOTLIN = "1.7.10"
 
     object Default {
         const val CORE = "1.7.0"
@@ -18,7 +18,7 @@ object Versions {
     }
 
     object Compose {
-        const val COMPOSE = "1.0.1"
+        const val COMPOSE = "1.3.1"
         const val NAVIGATION = "2.5.3"
     }
 
