@@ -55,6 +55,7 @@ android {
 dependencies {
     defaultDependencies()
     composeDependencies()
+    materialDesign()
     // make sure I need it
     di()
     retrofit()

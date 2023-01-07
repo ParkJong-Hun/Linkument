@@ -17,18 +17,19 @@ object Dependencies {
             "androidx.compose.ui:ui-tooling-preview:${Versions.Compose.COMPOSE}"
         const val UI_TOLLING = "androidx.compose.ui:ui-tooling:${Versions.Compose.COMPOSE}"
         const val UI_JUNIT = "androidx.compose.ui:ui-test-junit4:${Versions.Compose.COMPOSE}"
-        const val MATERIAL = "androidx.compose.material:material:${Versions.Compose.COMPOSE}"
         const val FOUNDATION = "androidx.compose.foundation:foundation:${Versions.Compose.COMPOSE}"
-        const val MATERIAL_ICONS_CORE =
-            "androidx.compose.material:material-icons-core:${Versions.Compose.COMPOSE}"
-        const val MATERIAL_ICONS_EXTENDED =
-            "androidx.compose.material:material-icons-extended:${Versions.Compose.COMPOSE}"
         const val RUNTIME_LIVEDATA =
             "androidx.compose.runtime:runtime-livedata:${Versions.Compose.COMPOSE}"
         const val CONSTRAINT_LAYOUT =
             "androidx.constraintlayout:constraintlayout-compose:${Versions.Compose.COMPOSE}"
         const val NAVIGATION =
             "androidx.navigation:navigation-compose:${Versions.Compose.NAVIGATION}"
+    }
+
+    object Material {
+        const val MATERIAL3 = "androidx.compose.material3:material3:${Versions.Material.MATERIAL3}"
+        const val MATERIAL3_WINDOW_SIZE_CLASS =
+            "androidx.compose.material3:material3-window-size-class:${Versions.Material.MATERIAL3}"
     }
 
     object DI {
