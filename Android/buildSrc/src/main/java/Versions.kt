@@ -1,11 +1,11 @@
 object Versions {
     const val COMPILE_SDK = 33
-    const val MIN_SDK = 28
+    const val MIN_SDK = 32
     const val TARGET_SDK = 33
     const val VERSION_CODE = 1
     const val VERSION_NAME = "1.0"
 
-    const val ANDROID = "7.1.2"
+    const val ANDROID = "7.3.1"
     const val KOTLIN = "1.7.10"
 
     object Default {
