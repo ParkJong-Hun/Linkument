@@ -97,7 +97,10 @@ private fun TemplateScreenPreview() {
                         .fillMaxWidth()
                         .height(36.dp),
                 ) {
-                    Text(text = "Navigation bar")
+                    Text(
+                        text = "Navigation bar",
+                        style = MaterialTheme.typography.labelMedium
+                    )
                 }
             },
         ) {
@@ -111,7 +114,10 @@ private fun TemplateScreenPreview() {
                     .fillMaxWidth()
                     .size(300.dp),
             ) {
-                Text(text = "It is content.")
+                Text(
+                    text = "It is content.",
+                    style = MaterialTheme.typography.bodyMedium
+                )
             }
         }
     }
