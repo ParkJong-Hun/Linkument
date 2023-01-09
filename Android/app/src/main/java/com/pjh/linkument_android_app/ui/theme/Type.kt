@@ -1,23 +1,104 @@
 package com.pjh.linkument_android_app.ui.theme
 
-// FIXME to MD3
-//// Set of Material typography styles to start with
-//val Typography = Typography(
-//    body1 = TextStyle(
-//        fontFamily = FontFamily.Default,
-//        fontWeight = FontWeight.Normal,
-//        fontSize = 16.sp
-//    )
-//    /* Other default text styles to override
-//    button = TextStyle(
-//        fontFamily = FontFamily.Default,
-//        fontWeight = FontWeight.W500,
-//        fontSize = 14.sp
-//    ),
-//    caption = TextStyle(
-//        fontFamily = FontFamily.Default,
-//        fontWeight = FontWeight.Normal,
-//        fontSize = 12.sp
-//    )
-//    */
-//)
+import androidx.compose.material3.Typography
+import androidx.compose.ui.text.TextStyle
+
+/**
+ * Text styles
+ * TODO Set of Material typography styles to start with
+ */
+val LightTypography = Typography(
+    displayLarge = TextStyle(
+
+    ),
+    displayMedium = TextStyle(
+
+    ),
+    displaySmall = TextStyle(
+
+    ),
+    headlineLarge = TextStyle(
+
+    ),
+    headlineMedium = TextStyle(
+
+    ),
+    headlineSmall = TextStyle(
+
+    ),
+    titleLarge = TextStyle(
+
+    ),
+    titleMedium = TextStyle(
+
+    ),
+    titleSmall = TextStyle(
+
+    ),
+    bodyLarge = TextStyle(
+
+    ),
+    bodyMedium = TextStyle(
+
+    ),
+    bodySmall = TextStyle(
+
+    ),
+    labelLarge = TextStyle(
+
+    ),
+    labelMedium = TextStyle(
+
+    ),
+    labelSmall = TextStyle(
+
+    )
+)
+
+val DarkTypography = Typography(
+    displayLarge = TextStyle(
+
+    ),
+    displayMedium = TextStyle(
+
+    ),
+    displaySmall = TextStyle(
+
+    ),
+    headlineLarge = TextStyle(
+
+    ),
+    headlineMedium = TextStyle(
+
+    ),
+    headlineSmall = TextStyle(
+
+    ),
+    titleLarge = TextStyle(
+
+    ),
+    titleMedium = TextStyle(
+
+    ),
+    titleSmall = TextStyle(
+
+    ),
+    bodyLarge = TextStyle(
+
+    ),
+    bodyMedium = TextStyle(
+
+    ),
+    bodySmall = TextStyle(
+
+    ),
+    labelLarge = TextStyle(
+
+    ),
+    labelMedium = TextStyle(
+
+    ),
+    labelSmall = TextStyle(
+
+    )
+)
