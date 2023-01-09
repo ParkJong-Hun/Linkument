@@ -3,7 +3,7 @@ package com.pjh.linkument_android_app.ui.theme
 import androidx.compose.ui.graphics.Color
 
 /**
- * App color
+ * App colors
  * build on https://m3.material.io/theme-builder
  */
 val md_theme_light_primary = Color(0xFF944A02)
