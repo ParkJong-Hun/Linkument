@@ -7,14 +7,14 @@ plugins {
 }
 
 android {
-    compileSdk = Versions.COMPILE_SDK
+    compileSdk = Versions.CompileSdk
 
     defaultConfig {
         applicationId = "com.pjh.linkument_android_app"
-        minSdk = Versions.MIN_SDK
-        targetSdk = Versions.TARGET_SDK
-        versionCode = Versions.VERSION_CODE
-        versionName = Versions.VERSION_NAME
+        minSdk = Versions.MinSdk
+        targetSdk = Versions.TargetSdk
+        versionCode = Versions.VersionCode
+        versionName = Versions.VersionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -43,7 +43,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Versions.Compose.COMPOSE
+        kotlinCompilerExtensionVersion = Versions.Compose.Compose
     }
     packagingOptions {
         resources {
