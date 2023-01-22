@@ -1,45 +1,51 @@
 object Dependencies {
     object Default {
-        const val CORE = "androidx.core:core-ktx:${Versions.Default.CORE}"
-        const val JUNIT = "junit:junit:${Versions.Default.JUNIT}"
-        const val LIFE_CYCLE =
-            "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.Default.LIFE_CYCLE}"
-        const val ACTIVITY_COMPOSE =
-            "androidx.activity:activity-compose:${Versions.Default.ACTIVITY_COMPOSE}"
-        const val EXT_JUNIT = "androidx.test.ext:junit:${Versions.Default.EXT_JUNIT}"
-        const val ESPRESSO_CORE =
-            "androidx.test.espresso:espresso-core:${Versions.Default.ESPRESSO_CORE}"
+        const val Core = "androidx.core:core-ktx:${Versions.Default.Core}"
+        const val Junit = "junit:junit:${Versions.Default.Junit}"
+        const val LifeCycleRuntime =
+            "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.Default.LifeCycle}"
+        const val LifeCycleRuntimeCompose =
+            "androidx.lifecycle:lifecycle-runtime-compose:${Versions.Default.LifeCycle}"
+        const val LifeCycleViewModel =
+            "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.Default.LifeCycle}"
+        const val ActivityCompose =
+            "androidx.activity:activity-compose:${Versions.Default.ActivityCompose}"
+        const val ExtJunit = "androidx.test.ext:junit:${Versions.Default.ExtJunit}"
+        const val EspressoCore =
+            "androidx.test.espresso:espresso-core:${Versions.Default.EspressoCore}"
     }
 
     object Compose {
-        const val UI = "androidx.compose.ui:ui:${Versions.Compose.COMPOSE}"
-        const val UI_TOOLING_PREVIEW =
-            "androidx.compose.ui:ui-tooling-preview:${Versions.Compose.COMPOSE}"
-        const val UI_TOLLING = "androidx.compose.ui:ui-tooling:${Versions.Compose.COMPOSE}"
-        const val UI_JUNIT = "androidx.compose.ui:ui-test-junit4:${Versions.Compose.COMPOSE}"
-        const val FOUNDATION = "androidx.compose.foundation:foundation:${Versions.Compose.COMPOSE}"
-        const val RUNTIME_LIVEDATA =
-            "androidx.compose.runtime:runtime-livedata:${Versions.Compose.COMPOSE}"
-        const val CONSTRAINT_LAYOUT =
-            "androidx.constraintlayout:constraintlayout-compose:${Versions.Compose.COMPOSE}"
-        const val NAVIGATION =
-            "androidx.navigation:navigation-compose:${Versions.Compose.NAVIGATION}"
+        const val Ui = "androidx.compose.ui:ui:${Versions.Compose.Compose}"
+        const val UiToolingPreview =
+            "androidx.compose.ui:ui-tooling-preview:${Versions.Compose.Compose}"
+        const val UiTooling = "androidx.compose.ui:ui-tooling:${Versions.Compose.Compose}"
+        const val UiJunit = "androidx.compose.ui:ui-test-junit4:${Versions.Compose.Compose}"
+        const val Foundation = "androidx.compose.foundation:foundation:${Versions.Compose.Compose}"
+        const val RuntimeLiveData =
+            "androidx.compose.runtime:runtime-livedata:${Versions.Compose.Compose}"
+        const val ConstraintLayout =
+            "androidx.constraintlayout:constraintlayout-compose:${Versions.Compose.Compose}"
+        const val Navigation =
+            "androidx.navigation:navigation-compose:${Versions.Compose.Navigation}"
+        const val HiltNavigationCompose =
+            "androidx.hilt:hilt-navigation-compose:${Versions.Compose.HiltNavigationCompose}"
     }
 
     object Material {
-        const val MATERIAL3 = "androidx.compose.material3:material3:${Versions.Material.MATERIAL3}"
-        const val MATERIAL3_WINDOW_SIZE_CLASS =
-            "androidx.compose.material3:material3-window-size-class:${Versions.Material.MATERIAL3}"
+        const val Material3 = "androidx.compose.material3:material3:${Versions.Material.Material3}"
+        const val Material3WindowSizeClass =
+            "androidx.compose.material3:material3-window-size-class:${Versions.Material.Material3}"
     }
 
     object DI {
-        const val DAGGER_HILT = "com.google.dagger:hilt-android:${Versions.DI.HILT}"
-        const val DAGGER_HILT_COMPILER =
-            "com.google.dagger:hilt-android-compiler:${Versions.DI.HILT}"
+        const val DaggerHilt = "com.google.dagger:hilt-android:${Versions.DI.Hilt}"
+        const val DaggerHiltCompiler =
+            "com.google.dagger:hilt-android-compiler:${Versions.DI.Hilt}"
     }
 
     object Retrofit {
-        const val RETROFIT = "com.squareup.retrofit2:retrofit:${Versions.Retrofit.RETROFIT}"
-        const val GSON = "com.squareup.retrofit2:converter-gson:${Versions.Retrofit.RETROFIT}"
+        const val Retrofit = "com.squareup.retrofit2:retrofit:${Versions.Retrofit.Retrofit}"
+        const val Gson = "com.squareup.retrofit2:converter-gson:${Versions.Retrofit.Retrofit}"
     }
 }
