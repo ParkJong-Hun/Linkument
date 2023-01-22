@@ -20,6 +20,7 @@ object Versions {
     object Compose {
         const val Compose = "1.3.1"
         const val Navigation = "2.5.3"
+        const val HiltNavigationCompose = "1.0.0"
     }
 
     object Material {

@@ -28,6 +28,8 @@ object Dependencies {
             "androidx.constraintlayout:constraintlayout-compose:${Versions.Compose.Compose}"
         const val Navigation =
             "androidx.navigation:navigation-compose:${Versions.Compose.Navigation}"
+        const val HiltNavigationCompose =
+            "androidx.hilt:hilt-navigation-compose:${Versions.Compose.HiltNavigationCompose}"
     }
 
     object Material {

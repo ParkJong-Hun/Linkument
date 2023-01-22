@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.pjh.linkument_android_app.ui.theme.DefaultScreenShortHorizontalPadding
@@ -15,7 +16,7 @@ import com.pjh.linkument_android_app.ui.theme.DefaultScreenVerticalPadding
 @Composable
 fun SignUpRoute(
     modifier: Modifier = Modifier,
-    viewModel: SignUpViewModel,
+    viewModel: SignUpViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 

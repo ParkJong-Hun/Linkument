@@ -22,6 +22,7 @@ fun DependencyHandler.composeDependencies() {
     // make sure I need it
     // implementation(Dependencies.Compose.CONSTRAINT_LAYOUT)
     implementation(Dependencies.Compose.Navigation)
+    implementation(Dependencies.Compose.HiltNavigationCompose)
 }
 
 fun DependencyHandler.materialDesign() {
