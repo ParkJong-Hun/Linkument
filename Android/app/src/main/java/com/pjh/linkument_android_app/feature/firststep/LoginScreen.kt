@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.pjh.linkument_android_app.ui.theme.DefaultScreenHorizontalPadding
+import com.pjh.linkument_android_app.ui.theme.DefaultScreenVerticalPadding
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable
@@ -25,7 +26,7 @@ internal fun LoginRoute(
         login = viewModel::login,
         navigateToHome = navigateToHome,
         navigateToSignUp = navigateToSignUp,
-        modifier = modifier
+        modifier = modifier,
     )
 }
 
@@ -38,7 +39,7 @@ internal fun LoginScreen(
     modifier: Modifier = Modifier,
 ) {
     Box(
-        modifier = modifier
+        modifier = modifier,
     ) {
         LoginContent(
             onSignUpButtonClick = navigateToSignUp,
@@ -62,11 +63,14 @@ internal fun LoginScreen(
 private fun LoginContent(
     onSignUpButtonClick: () -> Unit,
     onLoginButtonClick: (String) -> Unit,
-    modifier: Modifier,
+    modifier: Modifier = Modifier,
 ) {
     Column(
         modifier = modifier
-            .padding(DefaultScreenHorizontalPadding),
+            .padding(
+                horizontal = DefaultScreenHorizontalPadding,
+                vertical = DefaultScreenVerticalPadding,
+            ),
     ) {
         // TODO showLoginView
     }

@@ -8,14 +8,14 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
-    private val FirstStepRepository: FirstStepRepository
+    private val firstStepRepository: FirstStepRepository
 ) : ViewModel() {
     // TODO
     val uiState: StateFlow<LoginUiState> = MutableStateFlow(LoginUiState.None)
 
     fun login(id: String) {
         // FIXME may be wrong
-        FirstStepRepository.login(id)
+        firstStepRepository.login(id)
     }
 }
 
