@@ -1,37 +1,54 @@
 package com.pjh.linkument_android_app.feature.firststep
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class SignUpViewModel @Inject constructor(
     private val firstStepViewRepository: FirstStepRepository
 ) : ViewModel() {
-    // TODO
-    val uiState: StateFlow<SignUpUiState> = MutableStateFlow(SignUpUiState.None)
+    private val _uiState = MutableStateFlow<SignUpUiState>(SignUpUiState.None)
+    val uiState: StateFlow<SignUpUiState> get() = _uiState
 
     fun checkId(id: String) {
-        // FIXME may be wrong
-        firstStepViewRepository.checkId(id)
+        viewModelScope.launch {
+            _uiState.value = SignUpUiState.Loading
+            if (firstStepViewRepository.checkUserExist(id)) {
+                _uiState.value = SignUpUiState.CheckValid
+            } else {
+                _uiState.value = SignUpUiState.Error(null)
+            }
+        }
     }
 
     fun signUp(id: String) {
-        // FIXME may be wrong
-        firstStepViewRepository.signUp(id)
+        viewModelScope.launch {
+            _uiState.value = SignUpUiState.Loading
+            if (firstStepViewRepository.signUp(id)) {
+                _uiState.value = SignUpUiState.Success
+            } else {
+                _uiState.value = SignUpUiState.Error(null)
+            }
+        }
     }
-}
 
-sealed interface SignUpUiState {
-    object None : SignUpUiState
+    sealed interface SignUpUiState {
+        object None : SignUpUiState
 
-    object Loading : SignUpUiState
+        object Loading : SignUpUiState
 
-    object Success : SignUpUiState
+        object CheckValid : SignUpUiState
 
-    data class Error(
-        val throwable: Throwable
-    ) : SignUpUiState
+        object Success : SignUpUiState
+
+        data class Error(
+            // FIXME temporary. to non-null
+            val throwable: Throwable?
+        ) : SignUpUiState
+    }
 }
