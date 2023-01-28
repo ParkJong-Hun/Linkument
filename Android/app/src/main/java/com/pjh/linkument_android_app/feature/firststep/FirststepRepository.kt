@@ -1,9 +1,9 @@
 package com.pjh.linkument_android_app.feature.firststep
 
 interface FirstStepRepository {
-    fun login(id: String)
+    suspend fun login(nickname: String): Boolean
 
-    fun checkId(id: String)
+    suspend fun checkUserExist(nickname: String): Boolean
 
-    fun signUp(id: String)
+    suspend fun signUp(nickname: String): Boolean
 }
