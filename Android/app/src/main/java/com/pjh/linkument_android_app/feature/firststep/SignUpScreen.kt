@@ -22,6 +22,7 @@ fun SignUpRoute(
 
     SignUpScreen(
         uiState = uiState,
+        checkUser = viewModel::checkId,
         signUp = viewModel::signUp,
         modifier = modifier,
     )
@@ -30,6 +31,7 @@ fun SignUpRoute(
 @Composable
 fun SignUpScreen(
     uiState: SignUpUiState,
+    checkUser: (String) -> Unit,
     signUp: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -37,6 +39,7 @@ fun SignUpScreen(
         modifier = modifier,
     ) {
         SignUpContent(
+            onCheckUserButtonClick = checkUser,
             onRegisterButtonClick = signUp,
             modifier = modifier
         )
@@ -44,6 +47,9 @@ fun SignUpScreen(
             is SignUpUiState.None -> Unit
             is SignUpUiState.Loading -> {
                 // TODO showLoadingView
+            }
+            is SignUpUiState.CheckValid -> {
+                // TODO sign up button enable
             }
             is SignUpUiState.Success -> {
                 // TODO left Composable
@@ -57,6 +63,7 @@ fun SignUpScreen(
 
 @Composable
 private fun SignUpContent(
+    onCheckUserButtonClick: (String) -> Unit,
     onRegisterButtonClick: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
