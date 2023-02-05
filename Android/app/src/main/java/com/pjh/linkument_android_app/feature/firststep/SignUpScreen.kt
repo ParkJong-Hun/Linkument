@@ -1,15 +1,18 @@
 package com.pjh.linkument_android_app.feature.firststep
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.pjh.linkument_android_app.ui.theme.DefaultScreenShortHorizontalPadding
+import com.pjh.linkument_android_app.R
+import com.pjh.linkument_android_app.ui.theme.DefaultScreenHorizontalPadding
 import com.pjh.linkument_android_app.ui.theme.DefaultScreenVerticalPadding
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
@@ -30,18 +33,20 @@ fun SignUpRoute(
 
 @Composable
 fun SignUpScreen(
+    modifier: Modifier = Modifier,
     uiState: SignUpUiState,
     checkUser: (String) -> Unit,
     signUp: (String) -> Unit,
-    modifier: Modifier = Modifier,
 ) {
+    var checkValid by remember { mutableStateOf(false) }
     Box(
         modifier = modifier,
     ) {
         SignUpContent(
+            modifier = modifier,
+            checkValid = checkValid,
             onCheckUserButtonClick = checkUser,
             onRegisterButtonClick = signUp,
-            modifier = modifier
         )
         when (uiState) {
             is SignUpUiState.None -> Unit
@@ -49,7 +54,7 @@ fun SignUpScreen(
                 // TODO showLoadingView
             }
             is SignUpUiState.CheckValid -> {
-                // TODO sign up button enable
+                checkValid = true
             }
             is SignUpUiState.Success -> {
                 // TODO left Composable
@@ -61,19 +66,77 @@ fun SignUpScreen(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun SignUpContent(
+    modifier: Modifier = Modifier,
+    checkValid: Boolean,
     onCheckUserButtonClick: (String) -> Unit,
     onRegisterButtonClick: (String) -> Unit,
-    modifier: Modifier = Modifier,
 ) {
-    Column(
+    val (nickname, onNicknameChange) = remember { mutableStateOf("") }
+
+    Box(
         modifier = modifier
+            .fillMaxSize()
             .padding(
-                horizontal = DefaultScreenShortHorizontalPadding,
+                horizontal = DefaultScreenHorizontalPadding,
                 vertical = DefaultScreenVerticalPadding,
-            )
+            ),
+        contentAlignment = Alignment.TopStart
     ) {
-        // TODO showSignUpView
+        Column(
+            modifier = modifier
+                .fillMaxSize(),
+            verticalArrangement = Arrangement.SpaceBetween,
+        ) {
+            Row(
+                modifier = Modifier.padding(top = 50.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                TextField(
+                    value = nickname,
+                    onValueChange = onNicknameChange,
+                    modifier = Modifier.fillMaxWidth(0.7f),
+                    label = {
+                        Text(
+                            text = stringResource(R.string.L0102_nickname_text_field_label)
+                        )
+                    },
+                    maxLines = 1,
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                Button(
+                    onClick = { onCheckUserButtonClick(nickname) },
+                    modifier = Modifier.fillMaxWidth(),
+                    enabled = nickname.isNotBlank(),
+                ) {
+                    Text(
+                        text = stringResource(R.string.L0102_check_button_label),
+                        maxLines = 1,
+                        style = MaterialTheme.typography.labelSmall
+                    )
+                }
+            }
+            Button(
+                onClick = { onRegisterButtonClick(nickname) },
+                modifier = Modifier.fillMaxWidth(),
+                enabled = checkValid,
+            ) {
+                Text(
+                    text = stringResource(R.string.L0102_register_button_label)
+                )
+            }
+        }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun SignUpScreenView() {
+    SignUpContent(
+        checkValid = false,
+        onCheckUserButtonClick = {},
+        onRegisterButtonClick = {},
+    )
 }
