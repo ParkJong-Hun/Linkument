@@ -79,5 +79,8 @@ private fun SignUpContent(
 @Preview(showBackground = true)
 @Composable
 fun SignUpScreenView() {
-    SignUpRoute()
+    SignUpContent(
+        onCheckUserButtonClick = {},
+        onRegisterButtonClick = {},
+    )
 }
