@@ -70,7 +70,7 @@ fun SignUpScreen(
 @Composable
 private fun SignUpContent(
     modifier: Modifier = Modifier,
-    checkValid: Boolean = false,
+    checkValid: Boolean,
     onCheckUserButtonClick: (String) -> Unit,
     onRegisterButtonClick: (String) -> Unit,
 ) {
@@ -135,6 +135,7 @@ private fun SignUpContent(
 @Composable
 fun SignUpScreenView() {
     SignUpContent(
+        checkValid = false,
         onCheckUserButtonClick = {},
         onRegisterButtonClick = {},
     )
