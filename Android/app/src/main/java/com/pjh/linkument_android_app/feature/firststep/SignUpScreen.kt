@@ -2,10 +2,7 @@ package com.pjh.linkument_android_app.feature.firststep
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -36,16 +33,20 @@ fun SignUpRoute(
 
 @Composable
 fun SignUpScreen(
+    modifier: Modifier = Modifier,
     uiState: SignUpUiState,
     checkUser: (String) -> Unit,
     signUp: (String) -> Unit,
-    modifier: Modifier = Modifier,
 ) {
+    var checkValid by remember { mutableStateOf(false) }
     Box(
         modifier = modifier,
     ) {
         SignUpContent(
-            onCheckUserButtonClick = checkUser, onRegisterButtonClick = signUp, modifier = modifier
+            modifier = modifier,
+            checkValid = checkValid,
+            onCheckUserButtonClick = checkUser,
+            onRegisterButtonClick = signUp,
         )
         when (uiState) {
             is SignUpUiState.None -> Unit
@@ -53,7 +54,7 @@ fun SignUpScreen(
                 // TODO showLoadingView
             }
             is SignUpUiState.CheckValid -> {
-                // TODO sign up button enable
+                checkValid = true
             }
             is SignUpUiState.Success -> {
                 // TODO left Composable
@@ -68,9 +69,10 @@ fun SignUpScreen(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun SignUpContent(
+    modifier: Modifier = Modifier,
+    checkValid: Boolean = false,
     onCheckUserButtonClick: (String) -> Unit,
     onRegisterButtonClick: (String) -> Unit,
-    modifier: Modifier = Modifier,
 ) {
     val (nickname, onNicknameChange) = remember { mutableStateOf("") }
 
@@ -107,7 +109,7 @@ private fun SignUpContent(
                 Button(
                     onClick = { onCheckUserButtonClick(nickname) },
                     modifier = Modifier.fillMaxWidth(),
-                    enabled = true,
+                    enabled = nickname.isNotBlank(),
                 ) {
                     Text(
                         text = stringResource(R.string.L0102_check_button_label),
@@ -119,7 +121,7 @@ private fun SignUpContent(
             Button(
                 onClick = { onRegisterButtonClick(nickname) },
                 modifier = Modifier.fillMaxWidth(),
-                enabled = true,
+                enabled = checkValid,
             ) {
                 Text(
                     text = stringResource(R.string.L0102_register_button_label)
