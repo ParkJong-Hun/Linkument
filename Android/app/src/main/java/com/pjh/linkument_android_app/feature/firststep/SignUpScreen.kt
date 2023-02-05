@@ -68,9 +68,9 @@ private fun SignUpContent(
 ) {
     Column(
         modifier = modifier.padding(
-                horizontal = DefaultScreenShortHorizontalPadding,
-                vertical = DefaultScreenVerticalPadding,
-            )
+            horizontal = DefaultScreenShortHorizontalPadding,
+            vertical = DefaultScreenVerticalPadding,
+        )
     ) {
         // TODO showSignUpView
     }
@@ -79,5 +79,5 @@ private fun SignUpContent(
 @Preview(showBackground = true)
 @Composable
 fun SignUpScreenView() {
-    // TODO
+    SignUpRoute()
 }

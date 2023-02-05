@@ -81,5 +81,8 @@ private fun LoginContent(
 @Preview(showBackground = true)
 @Composable
 fun LoginPreview() {
-    // TODO
+    LoginRoute(
+        navigateToSignUp = {},
+        navigateToHome = {},
+    )
 }
