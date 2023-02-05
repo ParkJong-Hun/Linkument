@@ -86,7 +86,16 @@ private fun LoginContent(
             ),
         contentAlignment = Alignment.Center
     ) {
+        // TODO be more sexy ui
+        // maybe display app logo?
+        // signup, login button color is different
         Column {
+            // TODO this is logo image.
+            Spacer(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .fillMaxHeight(0.5f)
+            )
             TextField(
                 value = nickname,
                 onValueChange = onNicknameChange,
@@ -99,20 +108,27 @@ private fun LoginContent(
             Row(
                 modifier = Modifier.align(alignment = Alignment.End),
             ) {
+                Spacer(modifier = Modifier.weight(1f))
                 Button(
                     onClick = onSignUpButtonClick,
-                    modifier = Modifier.defaultMinSize(100.dp),
+                    modifier = Modifier.weight(1f),
                     enabled = true,
                 ) {
-                    Text(text = "Sign Up")
+                    Text(
+                        text = "Sign Up",
+                        maxLines = 1,
+                    )
                 }
                 Spacer(modifier = Modifier.width(8.dp))
                 Button(
                     onClick = { onLoginButtonClick(nickname) },
-                    modifier = Modifier.defaultMinSize(100.dp),
+                    modifier = Modifier.weight(1f),
                     enabled = true,
                 ) {
-                    Text(text = "Login")
+                    Text(
+                        text = "Login",
+                        maxLines = 1
+                    )
                 }
             }
         }
