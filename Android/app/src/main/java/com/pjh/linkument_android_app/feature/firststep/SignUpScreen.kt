@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -39,9 +40,7 @@ fun SignUpScreen(
         modifier = modifier,
     ) {
         SignUpContent(
-            onCheckUserButtonClick = checkUser,
-            onRegisterButtonClick = signUp,
-            modifier = modifier
+            onCheckUserButtonClick = checkUser, onRegisterButtonClick = signUp, modifier = modifier
         )
         when (uiState) {
             is SignUpUiState.None -> Unit
@@ -68,12 +67,17 @@ private fun SignUpContent(
     modifier: Modifier = Modifier,
 ) {
     Column(
-        modifier = modifier
-            .padding(
+        modifier = modifier.padding(
                 horizontal = DefaultScreenShortHorizontalPadding,
                 vertical = DefaultScreenVerticalPadding,
             )
     ) {
         // TODO showSignUpView
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun SignUpScreenView() {
+    // TODO
 }

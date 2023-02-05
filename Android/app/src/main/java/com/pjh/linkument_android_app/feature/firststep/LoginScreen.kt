@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -75,4 +76,10 @@ private fun LoginContent(
     ) {
         // TODO showLoginView
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun LoginPreview() {
+    // TODO
 }
