@@ -29,6 +29,7 @@ fun BasicButton(
     Button(
         onClick = onClick,
         modifier = modifier,
+        enabled = enabled,
         colors = when (colorType) {
             ButtonColorType.Primary -> ButtonDefaults.buttonColors(
                 containerColor = MaterialTheme.colorScheme.primary,
