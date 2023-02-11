@@ -26,62 +26,60 @@ fun BasicButton(
     textStyle: TextStyle = LightTypography.labelMedium,
     text: String,
 ) {
-    AppTheme {
-        Button(
-            onClick = onClick,
-            modifier = modifier,
-            colors = when (colorType) {
-                ButtonColorType.Primary -> ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.primary,
-                    contentColor = MaterialTheme.colorScheme.onPrimary,
-                )
-                ButtonColorType.PrimaryContainer -> ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
-                )
-                ButtonColorType.Secondary -> ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.secondary,
-                    contentColor = MaterialTheme.colorScheme.onSecondary,
-                )
-                ButtonColorType.SecondaryContainer -> ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.secondaryContainer,
-                    contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
-                )
-                ButtonColorType.Tertiary -> ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.tertiary,
-                    contentColor = MaterialTheme.colorScheme.onTertiary,
-                )
-                ButtonColorType.TertiaryContainer -> ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.tertiaryContainer,
-                    contentColor = MaterialTheme.colorScheme.onTertiaryContainer,
-                )
-                ButtonColorType.Error -> ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.error,
-                    contentColor = MaterialTheme.colorScheme.onError,
-                )
-            },
-        ) {
-            Text(
-                text = text,
-                maxLines = textMaxLines,
-                style = textStyle,
-                color = when (colorType) {
-                    ButtonColorType.Primary -> MaterialTheme.colorScheme.onPrimary
-                    ButtonColorType.PrimaryContainer -> MaterialTheme.colorScheme.onPrimaryContainer
-                    ButtonColorType.Secondary -> MaterialTheme.colorScheme.onSecondary
-                    ButtonColorType.SecondaryContainer -> MaterialTheme.colorScheme.onSecondaryContainer
-                    ButtonColorType.Tertiary -> MaterialTheme.colorScheme.onTertiary
-                    ButtonColorType.TertiaryContainer -> MaterialTheme.colorScheme.onTertiaryContainer
-                    ButtonColorType.Error -> MaterialTheme.colorScheme.onError
-                }
+    Button(
+        onClick = onClick,
+        modifier = modifier,
+        colors = when (colorType) {
+            ButtonColorType.Primary -> ButtonDefaults.buttonColors(
+                containerColor = MaterialTheme.colorScheme.primary,
+                contentColor = MaterialTheme.colorScheme.onPrimary,
             )
-        }
+            ButtonColorType.PrimaryContainer -> ButtonDefaults.buttonColors(
+                containerColor = MaterialTheme.colorScheme.primaryContainer,
+                contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+            )
+            ButtonColorType.Secondary -> ButtonDefaults.buttonColors(
+                containerColor = MaterialTheme.colorScheme.secondary,
+                contentColor = MaterialTheme.colorScheme.onSecondary,
+            )
+            ButtonColorType.SecondaryContainer -> ButtonDefaults.buttonColors(
+                containerColor = MaterialTheme.colorScheme.secondaryContainer,
+                contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
+            )
+            ButtonColorType.Tertiary -> ButtonDefaults.buttonColors(
+                containerColor = MaterialTheme.colorScheme.tertiary,
+                contentColor = MaterialTheme.colorScheme.onTertiary,
+            )
+            ButtonColorType.TertiaryContainer -> ButtonDefaults.buttonColors(
+                containerColor = MaterialTheme.colorScheme.tertiaryContainer,
+                contentColor = MaterialTheme.colorScheme.onTertiaryContainer,
+            )
+            ButtonColorType.Error -> ButtonDefaults.buttonColors(
+                containerColor = MaterialTheme.colorScheme.error,
+                contentColor = MaterialTheme.colorScheme.onError,
+            )
+        },
+    ) {
+        Text(
+            text = text,
+            maxLines = textMaxLines,
+            style = textStyle,
+            color = when (colorType) {
+                ButtonColorType.Primary -> MaterialTheme.colorScheme.onPrimary
+                ButtonColorType.PrimaryContainer -> MaterialTheme.colorScheme.onPrimaryContainer
+                ButtonColorType.Secondary -> MaterialTheme.colorScheme.onSecondary
+                ButtonColorType.SecondaryContainer -> MaterialTheme.colorScheme.onSecondaryContainer
+                ButtonColorType.Tertiary -> MaterialTheme.colorScheme.onTertiary
+                ButtonColorType.TertiaryContainer -> MaterialTheme.colorScheme.onTertiaryContainer
+                ButtonColorType.Error -> MaterialTheme.colorScheme.onError
+            }
+        )
     }
 }
 
 @Preview(group = "LightMode", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Composable
-fun BasicButtonLightPreview() {
+private fun BasicButtonLightPreview() {
     AppTheme {
         Column {
             BasicButton(
@@ -146,7 +144,7 @@ fun BasicButtonLightPreview() {
 
 @Preview(group = "DarkMode", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun BasicButtonDarkPreview() {
+private fun BasicButtonDarkPreview() {
     AppTheme {
         Column {
             BasicButton(
