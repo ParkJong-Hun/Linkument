@@ -21,7 +21,7 @@ fun BasicButton(
     modifier: Modifier = Modifier,
     onClick: () -> Unit,
     enabled: Boolean = true,
-    colorType: ButtonColorType,
+    colorType: ButtonColorType = ButtonColorType.Primary,
     textMaxLines: Int = 1,
     textStyle: TextStyle = LightTypography.labelMedium,
     text: String,
