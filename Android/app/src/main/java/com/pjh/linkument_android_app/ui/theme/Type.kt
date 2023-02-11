@@ -7,7 +7,6 @@ import androidx.compose.ui.unit.sp
 
 /**
  * Text styles
- * TODO Set of Material typography styles to start with
  */
 val LightTypography = Typography(
     displayLarge = TextStyle(
