@@ -1,7 +1,6 @@
 package com.pjh.linkument_android_app.feature.firststep
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -18,6 +17,10 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.pjh.linkument_android_app.R
+import com.pjh.linkument_android_app.ui.template.button.BasicButton
+import com.pjh.linkument_android_app.ui.template.button.BasicTextButton
+import com.pjh.linkument_android_app.ui.theme.AppTheme
+import com.pjh.linkument_android_app.ui.theme.ButtonColorType
 import com.pjh.linkument_android_app.ui.theme.DefaultScreenHorizontalPadding
 import com.pjh.linkument_android_app.ui.theme.DefaultScreenVerticalPadding
 
@@ -48,9 +51,7 @@ internal fun LoginScreen(
     navigateToSignUp: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    Box(
-        modifier = modifier,
-    ) {
+    Box(modifier = modifier) {
         LoginContent(
             onSignUpButtonClick = navigateToSignUp,
             onLoginButtonClick = login,
@@ -101,36 +102,22 @@ private fun LoginContent(
                 value = nickname,
                 onValueChange = onNicknameChange,
                 modifier = Modifier.fillMaxWidth(),
-                label = {
-                    Text(
-                        text = stringResource(R.string.L0101_nickname_text_field_label),
-                    )
-                },
-                maxLines = 1,
+                label = { Text(text = stringResource(R.string.L0101_nickname_text_field_label)) },
+                singleLine = true,
             )
-            Row(
-                modifier = Modifier.align(alignment = Alignment.End),
-            ) {
-                Spacer(modifier = Modifier.weight(1f))
-                Button(
+            Row(modifier = Modifier.align(alignment = Alignment.End)) {
+                BasicTextButton(
                     onClick = onSignUpButtonClick,
-                    modifier = Modifier.weight(1f),
-                ) {
-                    Text(
-                        text = stringResource(R.string.L0101_sign_up_button_label),
-                        maxLines = 1,
-                    )
-                }
+                    modifier = Modifier.wrapContentSize(),
+                    colorType = ButtonColorType.Secondary,
+                    text = stringResource(R.string.L0101_sign_up_button_label)
+                )
                 Spacer(modifier = Modifier.width(8.dp))
-                Button(
+                BasicButton(
                     onClick = { onLoginButtonClick(nickname) },
-                    modifier = Modifier.weight(1f),
-                ) {
-                    Text(
-                        text = stringResource(R.string.L0101_login_button_label),
-                        maxLines = 1
-                    )
-                }
+                    modifier = Modifier.wrapContentSize(),
+                    text = stringResource(R.string.L0101_login_button_label),
+                )
             }
         }
     }
@@ -139,8 +126,10 @@ private fun LoginContent(
 @Preview(showBackground = true)
 @Composable
 fun LoginPreview() {
-    LoginContent(
-        onSignUpButtonClick = {},
-        onLoginButtonClick = {},
-    )
+    AppTheme {
+        LoginContent(
+            onSignUpButtonClick = {},
+            onLoginButtonClick = {},
+        )
+    }
 }
