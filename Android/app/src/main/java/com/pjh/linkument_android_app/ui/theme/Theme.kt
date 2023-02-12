@@ -1,10 +1,13 @@
 package com.pjh.linkument_android_app.ui.theme
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 
 /**
  * App theme
@@ -95,6 +98,10 @@ fun AppTheme(
         colorScheme = colors,
         typography = typography
     ) {
-        content()
+        Box(
+            modifier = Modifier.background(color = colors.background)
+        ) {
+            content()
+        }
     }
 }

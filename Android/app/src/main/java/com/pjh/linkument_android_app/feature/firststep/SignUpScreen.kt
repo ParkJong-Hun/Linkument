@@ -1,5 +1,6 @@
 package com.pjh.linkument_android_app.feature.firststep
 
+import android.content.res.Configuration
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -12,6 +13,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.pjh.linkument_android_app.R
+import com.pjh.linkument_android_app.ui.template.button.BasicButton
+import com.pjh.linkument_android_app.ui.theme.AppTheme
+import com.pjh.linkument_android_app.ui.theme.ButtonColorType
 import com.pjh.linkument_android_app.ui.theme.DefaultScreenHorizontalPadding
 import com.pjh.linkument_android_app.ui.theme.DefaultScreenVerticalPadding
 
@@ -98,45 +102,52 @@ private fun SignUpContent(
                     value = nickname,
                     onValueChange = onNicknameChange,
                     modifier = Modifier.fillMaxWidth(0.7f),
-                    label = {
-                        Text(
-                            text = stringResource(R.string.L0102_nickname_text_field_label)
-                        )
-                    },
-                    maxLines = 1,
+                    label = { Text(text = stringResource(R.string.L0102_nickname_text_field_label)) },
+                    singleLine = true,
                 )
                 Spacer(modifier = Modifier.width(8.dp))
-                Button(
+                BasicButton(
                     onClick = { onCheckUserButtonClick(nickname) },
                     modifier = Modifier.fillMaxWidth(),
                     enabled = nickname.isNotBlank(),
-                ) {
-                    Text(
-                        text = stringResource(R.string.L0102_check_button_label),
-                        maxLines = 1,
-                        style = MaterialTheme.typography.labelSmall
-                    )
-                }
-            }
-            Button(
-                onClick = { onRegisterButtonClick(nickname) },
-                modifier = Modifier.fillMaxWidth(),
-                enabled = checkValid,
-            ) {
-                Text(
-                    text = stringResource(R.string.L0102_register_button_label)
+                    text = stringResource(R.string.L0102_check_button_label),
+                    textStyle = MaterialTheme.typography.labelSmall,
                 )
             }
+            BasicButton(
+                onClick = { onRegisterButtonClick(nickname) },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentHeight(),
+                enabled = checkValid,
+                colorType = ButtonColorType.Tertiary,
+                text = stringResource(R.string.L0102_register_button_label),
+                textStyle = MaterialTheme.typography.labelLarge
+            )
         }
     }
 }
 
-@Preview(showBackground = true)
+@Preview(group = "lightMode", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Composable
-fun SignUpScreenView() {
-    SignUpContent(
-        checkValid = false,
-        onCheckUserButtonClick = {},
-        onRegisterButtonClick = {},
-    )
+fun SignUpScreenLightPreview() {
+    AppTheme {
+        SignUpContent(
+            checkValid = true,
+            onCheckUserButtonClick = {},
+            onRegisterButtonClick = {},
+        )
+    }
+}
+
+@Preview(group = "darkMode", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+fun SignUpScreenDarkPreview() {
+    AppTheme {
+        SignUpContent(
+            checkValid = true,
+            onCheckUserButtonClick = {},
+            onRegisterButtonClick = {},
+        )
+    }
 }
