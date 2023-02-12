@@ -65,14 +65,18 @@ fun BasicButton(
             text = text,
             maxLines = textMaxLines,
             style = textStyle,
-            color = when (colorType) {
-                ButtonColorType.Primary -> MaterialTheme.colorScheme.onPrimary
-                ButtonColorType.PrimaryContainer -> MaterialTheme.colorScheme.onPrimaryContainer
-                ButtonColorType.Secondary -> MaterialTheme.colorScheme.onSecondary
-                ButtonColorType.SecondaryContainer -> MaterialTheme.colorScheme.onSecondaryContainer
-                ButtonColorType.Tertiary -> MaterialTheme.colorScheme.onTertiary
-                ButtonColorType.TertiaryContainer -> MaterialTheme.colorScheme.onTertiaryContainer
-                ButtonColorType.Error -> MaterialTheme.colorScheme.onError
+            color = if (enabled) {
+                when (colorType) {
+                    ButtonColorType.Primary -> MaterialTheme.colorScheme.onPrimary
+                    ButtonColorType.PrimaryContainer -> MaterialTheme.colorScheme.onPrimaryContainer
+                    ButtonColorType.Secondary -> MaterialTheme.colorScheme.onSecondary
+                    ButtonColorType.SecondaryContainer -> MaterialTheme.colorScheme.onSecondaryContainer
+                    ButtonColorType.Tertiary -> MaterialTheme.colorScheme.onTertiary
+                    ButtonColorType.TertiaryContainer -> MaterialTheme.colorScheme.onTertiaryContainer
+                    ButtonColorType.Error -> MaterialTheme.colorScheme.onError
+                }
+            } else {
+                MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f)
             }
         )
     }

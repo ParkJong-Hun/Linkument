@@ -1,5 +1,6 @@
 package com.pjh.linkument_android_app.feature.firststep
 
+import android.content.res.Configuration
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
@@ -123,9 +124,20 @@ private fun LoginContent(
     }
 }
 
-@Preview(showBackground = true)
+@Preview(group = "lightMode", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Composable
-fun LoginPreview() {
+fun LoginScreenLightPreview() {
+    AppTheme {
+        LoginContent(
+            onSignUpButtonClick = {},
+            onLoginButtonClick = {},
+        )
+    }
+}
+
+@Preview(group = "darkMode", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+fun LoginScreenDarkPreview() {
     AppTheme {
         LoginContent(
             onSignUpButtonClick = {},

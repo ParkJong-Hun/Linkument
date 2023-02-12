@@ -34,14 +34,18 @@ fun BasicTextButton(
             text = text,
             maxLines = textMaxLines,
             style = textStyle,
-            color = when (colorType) {
-                ButtonColorType.Primary -> MaterialTheme.colorScheme.primary
-                ButtonColorType.PrimaryContainer -> MaterialTheme.colorScheme.primaryContainer
-                ButtonColorType.Secondary -> MaterialTheme.colorScheme.secondary
-                ButtonColorType.SecondaryContainer -> MaterialTheme.colorScheme.secondaryContainer
-                ButtonColorType.Tertiary -> MaterialTheme.colorScheme.tertiary
-                ButtonColorType.TertiaryContainer -> MaterialTheme.colorScheme.tertiaryContainer
-                ButtonColorType.Error -> MaterialTheme.colorScheme.error
+            color = if (enabled) {
+                when (colorType) {
+                    ButtonColorType.Primary -> MaterialTheme.colorScheme.primary
+                    ButtonColorType.PrimaryContainer -> MaterialTheme.colorScheme.primaryContainer
+                    ButtonColorType.Secondary -> MaterialTheme.colorScheme.secondary
+                    ButtonColorType.SecondaryContainer -> MaterialTheme.colorScheme.secondaryContainer
+                    ButtonColorType.Tertiary -> MaterialTheme.colorScheme.tertiary
+                    ButtonColorType.TertiaryContainer -> MaterialTheme.colorScheme.tertiaryContainer
+                    ButtonColorType.Error -> MaterialTheme.colorScheme.error
+                }
+            } else {
+                MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f)
             }
         )
     }
