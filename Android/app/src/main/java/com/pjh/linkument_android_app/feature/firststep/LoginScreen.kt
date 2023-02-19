@@ -127,7 +127,7 @@ private fun LoginContent(
 @Preview(group = "lightMode", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Preview(group = "darkMode", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun LoginScreenLightPreview() {
+fun LoginScreenPreview() {
     AppTheme {
         LoginContent(
             onSignUpButtonClick = {},
