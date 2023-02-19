@@ -131,7 +131,7 @@ private fun SignUpContent(
 @Preview(group = "lightMode", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Preview(group = "darkMode", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-fun SignUpScreenLightPreview() {
+fun SignUpScreenPreview() {
     AppTheme {
         SignUpContent(
             checkValid = true,
