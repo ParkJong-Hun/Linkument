@@ -11,7 +11,8 @@ import com.pjh.linkument_android_app.ui.theme.*
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TemplateScreen(
+fun BasicScreen(
+    modifier: Modifier = Modifier,
     topBar: @Composable () -> Unit = {},
     bottomBar: @Composable (() -> Unit)? = null,
     systemBarPaddingEnabled: Boolean = true,
@@ -74,7 +75,8 @@ fun TemplateScreen(
 @Preview
 private fun TemplateScreenPreview() {
     AppTheme {
-        TemplateScreen(
+        BasicScreen(
+            modifier = Modifier.fillMaxSize(),
             topBar = {
                 CenterAlignedTopAppBar(
                     title = {
