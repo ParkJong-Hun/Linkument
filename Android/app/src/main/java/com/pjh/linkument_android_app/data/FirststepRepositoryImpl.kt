@@ -1,6 +1,6 @@
 package com.pjh.linkument_android_app.data
 
-import com.pjh.linkument_android_app.core.data.RetrofitClient
+import com.pjh.linkument_android_app.data.data.RetrofitClient
 import com.pjh.linkument_android_app.feature.firststep.FirstStepRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

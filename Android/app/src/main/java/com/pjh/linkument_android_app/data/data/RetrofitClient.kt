@@ -1,4 +1,4 @@
-package com.pjh.linkument_android_app.core.data
+package com.pjh.linkument_android_app.data.data
 
 import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
