@@ -5,30 +5,31 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
-
-private const val firstStepGraphRoutePattern = "first_step_graph"
-const val loginRoute = "login_route"
-const val signUpRoute = "sign_up_route"
+import com.pjh.linkument_android_app.core.LinkumentNavConstant
 
 fun NavController.navigateToFirstStepGraph(navOptions: NavOptions? = null) {
-    this.navigate(firstStepGraphRoutePattern, navOptions)
+    this.navigate(
+        route = LinkumentNavConstant.FirstStep.graphName,
+        navOptions = navOptions,
+    )
 }
 
 fun NavGraphBuilder.firstStepGraph(
     navigateToHome: () -> Unit,
     navigateToSignUp: () -> Unit,
-    nestedGraphs: NavGraphBuilder.() -> Unit
+    nestedGraphs: NavGraphBuilder.() -> Unit,
 ) {
     navigation(
-        route = firstStepGraphRoutePattern, startDestination = loginRoute
+        route = LinkumentNavConstant.FirstStep.graphName,
+        startDestination = LinkumentNavConstant.FirstStep.LoginRoute,
     ) {
-        composable(route = loginRoute) {
+        composable(route = LinkumentNavConstant.FirstStep.LoginRoute) {
             LoginRoute(
                 navigateToHome = navigateToHome,
                 navigateToSignUp = navigateToSignUp,
             )
         }
-        composable(route = signUpRoute) {
+        composable(route = LinkumentNavConstant.FirstStep.SignUpRoute) {
             SignUpRoute()
         }
         nestedGraphs()

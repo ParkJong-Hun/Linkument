@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.pjh.linkument_android_app.core.LinkumentScreen
 import com.pjh.linkument_android_app.ui.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
@@ -38,6 +39,11 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     AppTheme {
-        Greeting("Android")
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.surface
+        ) {
+            LinkumentScreen()
+        }
     }
 }
