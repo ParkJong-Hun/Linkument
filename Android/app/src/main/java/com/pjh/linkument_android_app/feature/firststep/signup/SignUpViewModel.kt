@@ -1,7 +1,8 @@
-package com.pjh.linkument_android_app.feature.firststep
+package com.pjh.linkument_android_app.feature.firststep.signup
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.pjh.linkument_android_app.data.data.repository.FirstStepRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

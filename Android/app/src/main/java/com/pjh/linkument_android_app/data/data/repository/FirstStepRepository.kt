@@ -1,4 +1,4 @@
-package com.pjh.linkument_android_app.feature.firststep
+package com.pjh.linkument_android_app.data.data.repository
 
 interface FirstStepRepository {
     suspend fun login(nickname: String): Boolean
