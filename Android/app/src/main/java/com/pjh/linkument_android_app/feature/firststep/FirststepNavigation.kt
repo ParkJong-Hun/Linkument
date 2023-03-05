@@ -6,6 +6,8 @@ import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.pjh.linkument_android_app.core.LinkumentNavConstant
+import com.pjh.linkument_android_app.feature.firststep.login.LoginRoute
+import com.pjh.linkument_android_app.feature.firststep.signup.SignUpRoute
 
 fun NavController.navigateToFirstStepGraph(navOptions: NavOptions? = null) {
     this.navigate(

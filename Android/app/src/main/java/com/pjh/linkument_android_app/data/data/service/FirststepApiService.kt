@@ -1,5 +1,6 @@
-package com.pjh.linkument_android_app.data
+package com.pjh.linkument_android_app.data.data.service
 
+import com.pjh.linkument_android_app.data.model.UserEntity
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.POST

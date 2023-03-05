@@ -1,6 +1,7 @@
-package com.pjh.linkument_android_app.feature.firststep
+package com.pjh.linkument_android_app.feature.firststep.login
 
 import android.content.res.Configuration
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
@@ -11,6 +12,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -89,15 +92,24 @@ private fun LoginContent(
             ),
         contentAlignment = Alignment.Center
     ) {
-        // TODO be more sexy ui
-        // maybe display app logo?
-        // signup, login button color is different
-        Column {
-            // TODO this is logo image.
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Image(
+                painter = painterResource(id = R.drawable.icon_linkument_round),
+                contentDescription = null,
+                modifier = Modifier
+                    .sizeIn(
+                        minWidth = 0.dp,
+                        minHeight = 0.dp,
+                        maxWidth = 140.dp,
+                        maxHeight = 140.dp
+                    ),
+                alignment = Alignment.Center,
+                contentScale = ContentScale.Crop
+            )
             Spacer(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .fillMaxHeight(0.5f)
+                    .fillMaxHeight(0.05f)
             )
             TextField(
                 value = nickname,

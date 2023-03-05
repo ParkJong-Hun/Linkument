@@ -1,7 +1,9 @@
-package com.pjh.linkument_android_app.data
+package com.pjh.linkument_android_app.core.repository
 
+import com.pjh.linkument_android_app.data.data.service.FirststepApiService
+import com.pjh.linkument_android_app.data.model.UserEntity
 import com.pjh.linkument_android_app.data.data.RetrofitClient
-import com.pjh.linkument_android_app.feature.firststep.FirstStepRepository
+import com.pjh.linkument_android_app.data.data.repository.FirstStepRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

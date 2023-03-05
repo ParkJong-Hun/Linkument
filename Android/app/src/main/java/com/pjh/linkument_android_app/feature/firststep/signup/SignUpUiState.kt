@@ -1,4 +1,4 @@
-package com.pjh.linkument_android_app.feature.firststep
+package com.pjh.linkument_android_app.feature.firststep.signup
 
 sealed interface SignUpUiState {
     object None : SignUpUiState

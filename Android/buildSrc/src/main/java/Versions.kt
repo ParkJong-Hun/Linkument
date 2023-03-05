@@ -28,7 +28,7 @@ object Versions {
     }
 
     object DI {
-        const val Hilt = "2.38.1"
+        const val Hilt = "2.45"
     }
 
     object Retrofit {

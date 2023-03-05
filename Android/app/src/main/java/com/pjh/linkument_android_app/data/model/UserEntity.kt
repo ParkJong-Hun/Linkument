@@ -1,4 +1,4 @@
-package com.pjh.linkument_android_app.data
+package com.pjh.linkument_android_app.data.model
 
 import com.google.gson.annotations.SerializedName
 import java.time.LocalDateTime

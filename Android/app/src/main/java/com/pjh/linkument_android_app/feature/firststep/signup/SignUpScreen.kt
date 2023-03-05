@@ -1,4 +1,4 @@
-package com.pjh.linkument_android_app.feature.firststep
+package com.pjh.linkument_android_app.feature.firststep.signup
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.*
